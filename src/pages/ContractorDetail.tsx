@@ -8,6 +8,7 @@ import ContractorInfo from "@/components/contractors/ContractorInfo";
 import ContractorReviews from "@/components/contractors/ContractorReviews";
 import LocationMapSection from "@/components/contractors/LocationMapSection";
 import NearbyContractors from "@/components/contractors/NearbyContractors";
+import BusinessSummary from "@/components/contractors/BusinessSummary"; // Import the new component
 import { useContractor, useNeighboringContractors } from "@/data";
 
 const ContractorDetail = () => {
@@ -115,9 +116,13 @@ const ContractorDetail = () => {
               imageSrc={imageSrc}
               setImageError={setImageError}
             />
+            {/* Add BusinessSummary component */}
+            {contractor.business_summary && (
+              <BusinessSummary summary={contractor.business_summary} />
+              
+            )}
             <LocationMapSection contractor={contractor} />
 
-            {/* Pass businessTitle to ContractorReviews */}
             <ContractorReviews
               reviews={contractor.reviewers || []}
               businessTitle={contractor.title}

@@ -24,6 +24,7 @@ export interface Contractor {
   local_image_path?: string; // New field for local image path
   featured?: boolean; // New field to mark a contractor as featured
   reviewers?: Reviewer[]; // New field for reviews
+  business_summary?: string; // Add business_summary
 }
 
 export interface Reviewer {
